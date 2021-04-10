@@ -14,3 +14,8 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+      - uses: actions/download-artifact@v2
+        with:
+        name: main.pdf
+      - name: Display structure of downloaded files
+        run: ls -R
