@@ -1,0 +1,285 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.3in,right=1.3in,bottom=1in]{geometry}
+
+\title{\vspace{-2cm}Solve for Rubiks Cube}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{rubikcube}
+\usepackage{float}
+\usepackage[sfdefault,light]{roboto}
+
+\begin{document}
+
+\maketitle
+
+\section{OLL}
+
+From yellow cross to complete yellow face.
+
+\begin{figure}[H]
+    \centering
+    \RubikFaceUp{X}{Y}{X}%
+                {Y}{Y}{Y}%
+                {X}{Y}{X}%
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUp}%
+    \qquad$\longrightarrow$\qquad%
+        \RubikFaceUp{X}{Y}{X}%
+                {Y}{Y}{Y}%
+                {X}{Y}{X}%
+    \RubikFaceUpAll{Y}
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUp}%
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{X}{Y}{X}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{X}%
+    \RubikFaceRight{X}{X}{Y}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{X}{X}{Y}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{X}{X}{X}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{X}%
+    \RubikFaceFront{X}{X}{Y}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{R,U,Rp,U,R,U,U,Rp}
+    \caption{Case I}
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{X}{Y}{X}%
+                {Y}{Y}{Y}%
+                {X}{Y}{Y}%
+    \RubikFaceRight{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{Y}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{Y}{X}{X}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{X}%
+    \RubikFaceFront{Y}{X}{X}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{Lp,Up,Lp,Up,Lp,U,U,L}
+    \caption{Case II}
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{X}{Y}{X}%
+                {Y}{Y}{Y}%
+                {X}{Y}{X}%
+    \RubikFaceRight{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{Y}{X}{Y}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceFront{Y}{X}{Y}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{F,R,U,Rp,Up,R,U,Rp,Up,R,U,Rp,Up,F}
+    \caption{Case III}
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{X}{Y}{X}%
+                {Y}{Y}{Y}%
+                {X}{Y}{X}%
+    \RubikFaceRight{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{Y}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{Y}{X}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{X}%
+    \RubikFaceFront{X}{X}{Y}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{f,R,U,Rp,Up,fp,F,R,U,Rp,Up,Fp}
+    \caption{Case IV}
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {X}{Y}{X}%
+    \RubikFaceRight{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceFront{Y}{X}{Y}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{R,R,D,Rp,U,U,R,Dp,Rp,U,U,Rp}
+    \caption{Case V}
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{X}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {X}{Y}{Y}%
+    \RubikFaceRight{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{X}{X}{Y}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceFront{Y}{X}{X}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{r,U,Rp,Up,rp,F,R,Fp}
+    \caption{Case VI}
+\end{figure}
+
+\begin{figure}[H]
+    \RubikFaceUp{X}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{X}%
+    \RubikFaceRight{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%                 
+    \RubikFaceBack{X}{X}{X}%
+                {X}{X}{X}%
+                {X}{X}{X}%
+    \RubikFaceLeft{Y}{X}{X}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{X}%
+    \RubikFaceFront{X}{X}{Y}%
+            {X}{X}{X}%
+            {X}{X}{X}%  
+    \ShowCube{2.3cm}{0.4}{\DrawRubikFaceUpSide}%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{Fp,r,U,Rp,Up,rp,F,R}
+    \caption{Case VII}
+\end{figure}
+
+\section{PLL}
+Two phases:
+
+\begin{enumerate}
+    \item Fix corners.
+
+\begin{figure}[H]
+        \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+    \ShowCube{2.3cm}{0.5}{%
+        \DrawRubikFaceUp
+        \draw[<->,ultra thick,color=black] (2.5,0.5) -- (2.5, 2.5);
+        \draw[<->,thick,color=black] (0.5,1.5) -- (2.5, 1.5);
+    }%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{R,U,Rp,Up,Rp,F,R,R,Up,Rp,Up,R,U,Rp,Fp}
+    \caption{Case I}
+\end{figure}
+
+\begin{figure}[H]
+        \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+    \ShowCube{2.3cm}{0.5}{%
+        \DrawRubikFaceUp
+        \draw[<->,ultra thick,color=black] (2.5,0.5) -- (0.5, 2.5);
+        \draw[<->,thick,color=black] (0.5,1.5) -- (1.5, 2.5);
+    }%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{F,R,Up,Rp,R,U,Rp,Fp,R,U,Rp,Up,Rp,F,R,Fp}
+    \caption{Case II}
+\end{figure}
+
+\begin{figure}[H]
+        \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+    \ShowCube{2.3cm}{0.5}{%
+        \DrawRubikFaceUp
+        \draw[->,ultra thick,color=black] (2.5,0.5) -- (0.5, 2.5);
+        \draw[->,ultra thick,color=black] (0.5,2.5) -- (2.5, 2.5);
+        \draw[->,ultra thick,color=black] (2.5,2.5) -- (2.5, 0.5);
+        
+    }%
+    \qquad$\longrightarrow$\qquad%
+    \caption{Case III}
+\end{figure}
+
+\item Fix edges:
+
+\begin{figure}[H]
+        \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+    \ShowCube{2.3cm}{0.5}{%
+        \DrawRubikFaceUp
+        \draw[->,ultra thick,color=black] (0.5,1.5) -- (1.5, 0.5);
+        \draw[->,ultra thick,color=black] (1.5,0.5) -- (2.5, 1.5);
+        \draw[->,ultra thick,color=black] (2.5,1.5) -- (0.5, 1.5);
+    }%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{R,Up,R,U,R,U,R,Up,Rp,Up,R,R}
+    \caption{Case I}
+\end{figure}
+
+\begin{figure}[H]
+        \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+    \ShowCube{2.3cm}{0.5}{%
+        \DrawRubikFaceUp
+        \draw[<->,ultra thick,color=black] (1.5,0.5) -- (1.5, 2.5);
+        \draw[<->,ultra thick,color=black] (0.5,1.5) -- (2.5, 1.5);
+    }%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{M,M,U,M,M,U,U,M,M,U,M,M}
+    \caption{Case II}
+\end{figure}
+
+\begin{figure}[H]
+        \RubikFaceUp{Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+                {Y}{Y}{Y}%
+    \ShowCube{2.3cm}{0.5}{%
+        \DrawRubikFaceUp
+        \draw[<->,ultra thick,color=black] (0.5,1.5) -- (1.5, 0.5);
+        \draw[<->,ultra thick,color=black] (1.5,2.5) -- (2.5, 1.5);
+    }%
+    \qquad$\longrightarrow$\qquad%
+    \ShowSequence{}{\Rubik}{M,M,Up,M,M,Up,Mp,U,U,M,M,U,U,Mp,U,U}
+    \caption{Case III}
+\end{figure}
+
+\end{enumerate}
+
+\end{document}
